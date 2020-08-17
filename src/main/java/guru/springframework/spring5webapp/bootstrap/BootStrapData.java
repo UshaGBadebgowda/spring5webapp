@@ -26,8 +26,15 @@ public class BootStrapData implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
 
-        Publisher hC = new Publisher("HarperCollins","US");
-        Publisher pen = new Publisher("Penguin","Viking Press");
+        Publisher hC = new Publisher();
+        hC.setName("Harper Collins");
+        hC.setCity("St Petersburg");
+        hC.setState("AL");
+
+        Publisher pen = new Publisher();
+        pen.setName("Penguin");
+        pen.setCity("Vikings Press");
+        pen.setState("FL");
 
         publisherRepository.save(hC);
         publisherRepository.save(pen);
